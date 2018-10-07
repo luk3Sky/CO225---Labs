@@ -1,59 +1,48 @@
 /*
-* LAB01Q - 1
+* LAB01Q - 2
 * ==@luke== 
 * E/15/142
 */
 
 import java.util.Scanner;
 
-class Main{
+public class Main{
+
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("Enter the color: ");
-        int red_color = keyboard.nextInt();
-        int green_color = keyboard.nextInt();
-        int blue_color = keyboard.nextInt();
-        int complemet_red_color,complemet_green_color,complemet_blue_color;
+       boolean is_Big = false;
+       boolean is_Special = false;
+       boolean is_Weird = false;
+       boolean is_Scary = false;
 
-        complemet_red_color = 255 - red_color;
-        complemet_green_color = 255 - green_color;
-        complemet_blue_color = 255 - blue_color;
+       System.out.print("Enter a number: ");
+       int input_Number = keyboard.nextInt();
 
-        // if( (red_color <= 144 && red_color >= 112 ) && (red_color <= 144 && blue_color >= 112 ) && (blue_color <= 144 && blue_color >= 112 ) ){
-        //     System.out.println("FOUND!");
-        //     complemet_red_color = ((red_color < 128)?red_color+128 : red_color-128);
-        //     complemet_green_color = ((green_color < 128)?green_color+128 : green_color-128);
-        //     complemet_blue_color = ((blue_color < 128)?blue_color+128 : blue_color-128);
-        // }else{
-        //     complemet_red_color = 255 - red_color;
-        //     complemet_green_color = 255 - green_color;
-        //     complemet_blue_color = 255 - blue_color;
-        // }
+       if (input_Number > 999){
+           is_Big = true;
+       }
+       if ( input_Number % 15 == 0){
+           is_Special = true;
+       }
+       if ( (input_Number % 5 == 0) && (input_Number % 6 == 0) && (!(input_Number % 18 == 0))){
+           is_Weird = true;
+           System.out.println("Weird");
+       }
+       if (is_Weird || is_Big){
+           is_Scary = true;
+       }
 
-
-        if ( ((complemet_red_color <= red_color+32)&&(complemet_red_color >= red_color-32)) && ((complemet_green_color <= green_color+32)&&(complemet_green_color >= green_color-32)) && ((complemet_blue_color <= blue_color+32)&&(complemet_blue_color >= blue_color-32)) ) {
-            System.out.println("Edge found");
-
-            if (red_color <= 128) {
-                complemet_red_color = red_color + 128;
-            } else {
-                complemet_red_color = red_color - 128;
-            }
-
-            if (green_color <= 128) {
-                complemet_green_color = green_color + 128;
-            } else {
-                complemet_green_color = green_color - 128;
-            }
-
-            if (blue_color <= 128) {
-                complemet_blue_color = blue_color + 128;
-            } else {
-                complemet_blue_color = blue_color - 128;
-            }
-
+        if ( (is_Special == true) && (is_Weird == true) && (is_Scary == true) && (is_Big == true) ) {
+            System.out.print(input_Number + " is special, weird, scary and big.");
+        }else if( (is_Special == true) && (is_Weird == true) && (is_Scary == true) && (is_Big == false) ){
+            System.out.print(input_Number + " is special, weird and scary but not big.");
+        }else if( (is_Special == true) && (is_Weird == true) && (is_Big == true) ){
+            System.out.print(input_Number + " is special, weird, scary and big.");
+        }else if( (is_Special == true) && (is_Weird == false) && (is_Big == false) ){
+            System.out.print(input_Number + " is special but not scary.");
+        }else if( (is_Special == false) && (is_Weird == false) && (is_Big == false) ){
+            System.out.print(input_Number + " is not special.");
         }
-        
-        System.out.print("The complement: "+ complemet_red_color + " " + complemet_green_color + " " + complemet_blue_color);
+
     }
 }
