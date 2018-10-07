@@ -1,3 +1,9 @@
+/*
+* LAB01Q - 1
+* ==@luke== 
+* E/15/142
+*/
+
 import java.util.Scanner;
 
 class Main{
@@ -26,14 +32,26 @@ class Main{
 
 
         if ( ((complemet_red_color <= red_color+32)&&(complemet_red_color >= red_color-32)) && ((complemet_green_color <= green_color+32)&&(complemet_green_color >= green_color-32)) && ((complemet_blue_color <= blue_color+32)&&(complemet_blue_color >= blue_color-32)) ) {
-            complemet_red_color = ((red_color < 128)?red_color+128 : red_color-128);
+            System.out.println("Edge found");
+
             if (red_color <= 128) {
-                
+                complemet_red_color = red_color + 128;
             } else {
-                
+                complemet_red_color = red_color - 128;
             }
-            complemet_green_color = ((green_color < 128)?green_color+128 : green_color-128);
-            complemet_blue_color = ((blue_color < 128)?blue_color+128 : blue_color-128);
+
+            if (green_color <= 128) {
+                complemet_green_color = green_color + 128;
+            } else {
+                complemet_green_color = green_color - 128;
+            }
+
+            if (blue_color <= 128) {
+                complemet_blue_color = blue_color + 128;
+            } else {
+                complemet_blue_color = blue_color - 128;
+            }
+
         }
         
         System.out.print("The complement: "+ complemet_red_color + " " + complemet_green_color + " " + complemet_blue_color);
