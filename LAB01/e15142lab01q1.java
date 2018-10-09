@@ -1,7 +1,8 @@
 /*
+* CO225 - Software Construction Lab Assignments
 * LAB01Q - 2
 * ==@luke== 
-* E/15/142
+* E/15/142  
 */
 
 import java.util.Scanner;
@@ -26,22 +27,82 @@ public class e15142lab01q1{
        }
        if ( (input_Number % 5 == 0) && (input_Number % 6 == 0) && (!(input_Number % 18 == 0))){
            is_Weird = true;
-           System.out.println("Weird");
        }
        if (is_Weird || is_Big){
            is_Scary = true;
        }
 
+       /*
         if ( (is_Special == true) && (is_Weird == true) && (is_Scary == true) && (is_Big == true) ) {
-            System.out.print(input_Number + " is special, weird, scary and big.");
+            System.out.print(input_Number + " is special, big, weird, scary.");
         }else if( (is_Special == true) && (is_Weird == true) && (is_Scary == true) && (is_Big == false) ){
-            System.out.print(input_Number + " is special, weird and scary but not big.");
+            System.out.print(input_Number + " is special, weird, scary, but not big.");
+        }else if( (is_Special == true) && (is_Weird == false) && (is_Scary == true) && (is_Big == true) ){
+            System.out.print(input_Number + " is special, big, scary, but not weird.");
         }else if( (is_Special == true) && (is_Weird == true) && (is_Big == true) ){
-            System.out.print(input_Number + " is special, weird, scary and big.");
+            System.out.print(input_Number + " is special, weird, scary, and big.");
         }else if( (is_Special == true) && (is_Weird == false) && (is_Big == false) ){
-            System.out.print(input_Number + " is special but not scary.");
+            System.out.print(input_Number + " is special, but not scary.");
         }else if( (is_Special == false) && (is_Weird == false) && (is_Big == false) ){
-            System.out.print(input_Number + " is not special.");
+            System.out.print(input_Number + " is not special, big, weird, scary.");
+        }
+        */
+
+/*
+      A number is,
+        Special =>  if it is exactly divisible by 15
+        Big     =>  if it is greater than 999
+        Weird   =>  if it is exactly divisible by 5 and 6 but not 18
+        Scary   =>  if it is big or weird
+*/
+
+        if (is_Special == true) {
+            // Special
+            System.out.print(input_Number + " is special, ");
+
+            if (is_Big == true) {
+                // Special + Big
+                System.out.print("big, ");
+
+                if (is_Weird == true) {
+                    // Special + Big + Weird + Scary                    = > End
+                    System.out.print("weird, scary.\n");
+                } else {
+                    // Special + Big + Not Weird + Scary                = > End
+                    System.out.print("scary, but not weird.\n");
+                }
+            } else {
+                // Special + Not Big
+
+                if (is_Weird == true) {
+                    // Special + Weird + Not Big                        = > End
+                    System.out.print("weird, scary, but not big.\n");
+                } else {
+                    // Special + Not Big + Not Weird + Not Scary        = > End
+                    System.out.print("but not scary.\n");
+                }
+
+            }
+        } else {
+            if (is_Big == true) {
+                // Not Special + Big
+                System.out.print(input_Number + " is big, ");
+                if (is_Weird == true) {
+                    // Not Special + Big + Weird + Scary                = > End
+                    System.out.print("big, weird, scary.\n");
+                } else {
+                    // Not Special + Big + Not Weird + Scary            = > End
+                    System.out.print("scary, but not weird.\n");
+                }
+            } else {
+                // Not Special + Not Big
+                if (is_Weird == true) {
+                    
+                } else {
+                    
+                }
+                
+            }
         }
 
     }
