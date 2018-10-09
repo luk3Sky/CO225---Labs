@@ -1,7 +1,8 @@
 /*
-* LAB01Q - 1
+* CO225 - Software Construction Lab Assignments
+* LAB01Q - 2
 * ==@luke== 
-* E/15/142
+* E/15/142  
 */
 
 import java.util.Scanner;

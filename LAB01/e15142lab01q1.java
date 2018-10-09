@@ -1,6 +1,6 @@
 /*
 * CO225 - Software Construction Lab Assignments
-* LAB01Q - 2
+* LAB01Q - 1
 * ==@luke== 
 * E/15/142  
 */
@@ -97,13 +97,13 @@ public class e15142lab01q1{
             } else {
                 // Not Special + Not Big
                 if (is_Weird == true) {
-                    
+                    // Not Special + Not Big + Weird + Scary            = > End
+                    System.out.print(input_Number + " is weird, scary, but not big.");
                 } else {
-                    
+                    // Not Special + Not Scary                          = > End
+                    System.out.print(input_Number + " is not scary.");
                 }
-                
             }
         }
-
     }
 }
