@@ -39,10 +39,11 @@ public class Main{
         }else if( (is_Special == true) && (is_Weird == true) && (is_Big == true) ){
             System.out.print(input_Number + " is special, weird, scary and big.");
         }else if( (is_Special == true) && (is_Weird == false) && (is_Big == false) ){
-            System.out.print(input_Number + " is special but not scary.");
+            System.out.print(input_Number + " is special, but not scary.");
         }else if( (is_Special == false) && (is_Weird == false) && (is_Big == false) ){
             System.out.print(input_Number + " is not special.");
         }
+        keyboard.close();
 
     }
 }
