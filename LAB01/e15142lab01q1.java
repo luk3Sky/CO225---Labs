@@ -32,22 +32,6 @@ public class e15142lab01q1{
            is_Scary = true;
        }
 
-       /*
-        if ( (is_Special == true) && (is_Weird == true) && (is_Scary == true) && (is_Big == true) ) {
-            System.out.print(input_Number + " is special, big, weird, scary.");
-        }else if( (is_Special == true) && (is_Weird == true) && (is_Scary == true) && (is_Big == false) ){
-            System.out.print(input_Number + " is special, weird, scary, but not big.");
-        }else if( (is_Special == true) && (is_Weird == false) && (is_Scary == true) && (is_Big == true) ){
-            System.out.print(input_Number + " is special, big, scary, but not weird.");
-        }else if( (is_Special == true) && (is_Weird == true) && (is_Big == true) ){
-            System.out.print(input_Number + " is special, weird, scary, and big.");
-        }else if( (is_Special == true) && (is_Weird == false) && (is_Big == false) ){
-            System.out.print(input_Number + " is special, but not scary.");
-        }else if( (is_Special == false) && (is_Weird == false) && (is_Big == false) ){
-            System.out.print(input_Number + " is not special, big, weird, scary.");
-        }
-        */
-
 /*
       A number is,
         Special =>  if it is exactly divisible by 15
