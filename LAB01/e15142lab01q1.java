@@ -7,7 +7,7 @@
 
 import java.util.Scanner;
 
-public class e15142lab01q1{
+public class E15142lab01q1{
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
