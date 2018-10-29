@@ -7,10 +7,18 @@ class E15142Ball{
         Ball.updateTime(5.0);
         Ball b2 = new Ball(0, 1.0, 20.0, 45.0);
         Ball.updateTime(5.0);
-        b1.willCollide(b2);
-        System.out.println(Ball.system_time);
-        Ball b3 = new Ball(10.0, 5.0, 3.0, 30.0);
+        if ( b1.willCollide(b2) ){
+            System.out.println("B1 and B2 will collide");
+        }else{
+            System.out.println("B1 and B2 won't collide");
+        }
+        Ball b3 = new Ball(-10.0, 5.0, 3.0, 30.0);
         Ball.updateTime(20.0);
-        b2.willCollide(b3);
+        
+        if ( b2.willCollide(b3) ){
+            System.out.println("B2 and B3 will collide");
+        }else{
+            System.out.println("B2 and B3 won't collide");
+        }
     }
 }
