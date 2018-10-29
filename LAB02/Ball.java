@@ -1,3 +1,4 @@
+import java.lang.Math;
 
 class Ball{
     // Private attributes of the Ball 
@@ -22,15 +23,15 @@ class Ball{
     public double get_y(){
         return this.y_pos;
     }
-    // Getters for the speed
+    // Getter for the speed
     public double get_speed(){
         return this.speed;
     }
-    // Getters for the angle with x
+    // Getter for the angle with x
     public double get_angle(){
         return this.angle_of_speed;
     }
-    // Getters for the initial time
+    // Getter for the initial time
     public double get_initial_time(){
         return this.initial_time;
     }
@@ -61,4 +62,33 @@ class Ball{
         }
         return false;
     }
+
+    public static void main(String[] args) {
+
+        Ball b1 = new Ball(0, 1.0, 10.0, 45.0);
+        
+        updateTime(5.0);
+        
+        Ball b2 = new Ball(0, 1.0, 20.0, 45.0);
+        
+        updateTime(5.0);
+        
+        if ( b1.willCollide(b2) ){
+            System.out.println("B1 and B2 will collide");
+        }else{
+            System.out.println("B1 and B2 won't collide");
+        }
+        
+        Ball b3 = new Ball(-10.0, 5.0, 3.0, 30.0);
+        
+        updateTime(20.0);
+        
+        if ( b2.willCollide(b3) ){
+            System.out.println("B2 and B3 will collide");
+        }else{
+            System.out.println("B2 and B3 won't collide");
+        }
+        
+    }
+
 }
