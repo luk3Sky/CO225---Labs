@@ -1,7 +1,5 @@
-import java.lang.Math;
 
 class Ball{
-    
     // Private attributes of the Ball 
     private double x_pos, y_pos, speed, angle_of_speed;
     
@@ -39,12 +37,15 @@ class Ball{
 
     // Check collision
     public void willCollide(Ball b1){
-        double this_new_pos_x = this.x_pos + (this.speed*Math.cos(this.angle_of_speed)*system_time);
-        double this_new_pos_y = this.y_pos + (this.speed*Math.sin(this.angle_of_speed)*system_time);
-        double other_new_pos_x = b1.get_x() + (this.get_speed()*Math.cos(this.get_angle())*system_time);
-        double other_new_pos_y = b1.get_y() + (this.get_speed()*Math.sin(this.get_angle())*system_time);
-
+        double this_new_pos_x = this.get_x() + (this.get_speed()*Math.cos(this.get_angle())*10);
+        double this_new_pos_y = this.get_y() + (this.get_speed()*Math.sin(this.get_speed())*10);
+        double other_new_pos_x = b1.get_x() + (b1.get_speed()*Math.cos(b1.get_angle())*5);
+        double other_new_pos_y = b1.get_y() + (b1.get_speed()*Math.sin(b1.get_angle())*5);
+        
+        System.out.println(system_time);
         System.out.println(this_new_pos_x);
-
+        System.out.println(this_new_pos_y);
+        System.out.println(other_new_pos_x);
+        System.out.println(other_new_pos_y);
     }
 }
