@@ -23,6 +23,14 @@ class Ball{
     public double get_y(){
         return this.y_pos;
     }
+    // Getters for the speed
+    public double get_speed(){
+        return this.speed;
+    }
+    // Getters for the angle with x
+    public double get_angle(){
+        return this.angle_of_speed;
+    }
 
     // Update system time
     public static void updateTime(double time){
@@ -31,6 +39,12 @@ class Ball{
 
     // Check collision
     public void willCollide(Ball b1){
-        
+        double this_new_pos_x = this.x_pos + (this.speed*Math.cos(this.angle_of_speed)*system_time);
+        double this_new_pos_y = this.y_pos + (this.speed*Math.sin(this.angle_of_speed)*system_time);
+        double other_new_pos_x = b1.get_x() + (this.get_speed()*Math.cos(this.get_angle())*system_time);
+        double other_new_pos_y = b1.get_y() + (this.get_speed()*Math.sin(this.get_angle())*system_time);
+
+        System.out.println(this_new_pos_x);
+
     }
 }
