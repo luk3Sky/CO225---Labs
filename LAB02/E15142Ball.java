@@ -49,21 +49,12 @@ class Ball{
         double other_new_pos_x = b1.get_x() + (b1.get_speed() * (Math.cos(b1.get_angle())) * (system_time-b1.get_initial_time() ) );
         double other_new_pos_y = b1.get_y() + (b1.get_speed() * (Math.sin(b1.get_angle())) * (system_time-b1.get_initial_time() ) );
         
-        // System.out.println(system_time);
-        // System.out.println(this.get_initial_time());
-        // System.out.println(b1.get_initial_time());
-        // System.out.println(this_new_pos_x);
-        // System.out.println(this_new_pos_y);
-        // System.out.println(other_new_pos_x);
-        // System.out.println(other_new_pos_y);
         if( (this_new_pos_x == other_new_pos_x) && (this_new_pos_y == other_new_pos_y) ){
-            // System.out.println("Collide");
             return true;
         }
         return false;
     }
 }
-
 
 public class E15142Ball{
     public static void main(String[] args) {
