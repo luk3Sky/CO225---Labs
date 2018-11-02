@@ -55,10 +55,10 @@ class Ball{
 
     // Check collision
     public boolean willCollide(Ball b1){
-        double this_new_pos_x = this.get_x() + (this.get_speed() * (Math.cos(this.get_angle())) *(system_time-this.get_initial_time() ) );
-        double this_new_pos_y = this.get_y() + (this.get_speed() *(Math.sin(this.get_angle())) * (system_time-this.get_initial_time() ) );
-        double other_new_pos_x = b1.get_x() + (b1.get_speed() * (Math.cos(b1.get_angle())) * (system_time-b1.get_initial_time() ) );
-        double other_new_pos_y = b1.get_y() + (b1.get_speed() * (Math.sin(b1.get_angle())) * (system_time-b1.get_initial_time() ) );
+        double this_new_pos_x = this.get_x() + (this.get_speed() * (Math.cos(Math.toRadians(this.get_angle()))) *(system_time-this.get_initial_time() ) );
+        double this_new_pos_y = this.get_y() + (this.get_speed() *(Math.sin(Math.toRadians(this.get_angle()))) * (system_time-this.get_initial_time() ) );
+        double other_new_pos_x = b1.get_x() + (b1.get_speed() * (Math.cos(Math.toRadians(b1.get_angle()))) * (system_time-b1.get_initial_time() ) );
+        double other_new_pos_y = b1.get_y() + (b1.get_speed() * (Math.sin(Math.toRadians(b1.get_angle()))) * (system_time-b1.get_initial_time() ) );
         
         if( (this_new_pos_x == other_new_pos_x) && (this_new_pos_y == other_new_pos_y) ){
             System.out.println("B"+ this.get_ball_number() + " and B" + b1.get_ball_number() + " will collide");
