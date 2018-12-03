@@ -1,7 +1,11 @@
 class Main { 
-    public static int [][] a = {{1, 2, 1}, {1, 3, 1}, {9, 1, 1}};
+    // public static int [][] a = {{1, 2, 1}, {1, 3, 1}, {9, 1, 1}};
     
-    public static int [][] b = {{1 }, {1 }, {1 }};
+    // public static int [][] b = {{1 }, {1 }, {1 }};
+
+	public static int [][] a = { {1, 1, 2, 3, 4, 3, 1, 2, 3, 4, 4, 4} , {1, 1, 2, 3, 4, 3, 1, 2, 3, 4, 4, 4} , {1, 1, 2, 3, 4, 3, 1, 2, 3, 4, 4, 4} };
+	public static int [][] b = { {2 , 2 , 1},
+	{2 , 2 , 1},{2 , 2 , 1},{2 , 2 , 1},{2 , 2 , 1},{2 , 2 , 1},{2 , 2 , 1},{2 , 2 , 1},{2 , 2 , 1},{2 , 2 , 1},{2 , 2 , 1},{2 , 2 , 1} };
 
     public static void print_matrix(int [][] a) {
 		for(int i=0; i < a.length; i++) {
@@ -13,8 +17,13 @@ class Main {
 
     public static void main(String [] args) { 
 
-	int [][] x = Matrix.multiply(a, b); 
-	print_matrix(x); // see if the multipication is correct 	
-
-    }
+		try {
+			int [][] x = Matrix.multiply(a, b); 
+			print_matrix(x);
+		} catch (NullPointerException e) {
+			return;
+		}
+		
+	
+	}
 }
