@@ -1,5 +1,5 @@
 class Main { 
-    public static int [][] a = {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}};
+    public static int [][] a = {{1, 2, 1}, {1, 3, 1}, {9, 1, 1}};
     
     public static int [][] b = {{1 }, {1 }, {1 }};
 

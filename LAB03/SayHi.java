@@ -5,16 +5,16 @@
 class SayHiThread extends Thread {
 
     private String name;
-    private static int howmanytimes = 5;
+    private static int howmanytimes = 10;
 
     public SayHiThread(String name) {
-	this.name = name;
+		this.name = name;
     }
     public void run() {
-	int i;
-	for(i=0; i < howmanytimes; i ++)
-	    System.out.println(this.name + " says hi, running as thread "+
-			       Thread.currentThread().getId());
+		int i;
+		for(i=0; i < howmanytimes; i ++)
+			System.out.println(this.name + " says hi, running as thread "+
+					Thread.currentThread().getId());
     }
 }
 
