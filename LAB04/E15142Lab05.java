@@ -33,7 +33,7 @@ public class E15142Lab05{
         // System.out.println(ID);
     }
 
-    // A method to test the lists
+    // Method to test the lists
     public static void testLists(){
         int key = firstNameMap.get("Garey");
         String a = contactListMap.get(key).getEmail();
@@ -41,50 +41,49 @@ public class E15142Lab05{
     }
 
     public static void main(String[] args) {
-        // HashMap<String, Integer> contactList = new HashMap<String, Integer>();
-
         
+        // CSV file 
         String CSV_File = "./MOCK_DATA.csv";
         BufferedReader BR = null;
         String row = "";
         String splitter = ",";
 
+        // Reading the csv file
         try {
-
             BR = new BufferedReader(new FileReader(CSV_File));
             int count = 0;
-            while ((row = BR.readLine()) != null) {
 
-                // use comma as separator
+            while ((row = BR.readLine()) != null) {
+                
+                // seperate data in the row by comma
                 String[] data_row = row.split(splitter);
                 if (data_row[0].equals("first_name")) {
                     continue;
                 }
-                // System.out.println("Contact [ First Name = " + data_row[0] + ", Last Name = " + data_row[1] + " , Mobile no. = " + data_row[3] + " ]");
-                // firstNameMap.put(data_row[0], count);
-                // lastNameMap.put(data_row[1], count);
-                // contactListMap.put(count, new Contact(data_row[2], data_row[3]) );
+                
+                // Calling the createLists function
                 createLists(count, data_row[0], data_row[1], data_row[2], data_row[3]);
                 count++;
             }
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Error : File not found!");
+            return;
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error : IO (Open) Error!");
+            return;
         } finally {
             if (BR != null) {
                 try {
                     BR.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("Error : IO (Close) Error!");
+                    return;
                 }
             }
-        }
-
+        } // Insertion to the Data Structures is successful!
+        
         System.out.println("Insertion done!");
         testLists();
-
     }
-    
 }
