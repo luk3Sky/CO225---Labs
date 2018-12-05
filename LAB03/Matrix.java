@@ -48,7 +48,7 @@ public class Matrix extends Thread{
 			for (int i = 0; i < no_Of_Threads ; i++) {
 				System.out.println(i);
 				t[i] = new Matrix(a, b);
-				t[i].run();
+				// t[i].run();
 				t[i].start();
 			}
 		} catch (NullPointerException e) {
