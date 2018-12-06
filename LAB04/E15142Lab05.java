@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.Character;
 import java.io.*;
 
 class Contact{
@@ -43,7 +44,7 @@ public class E15142Lab05{
     public static void main(String[] args) {
         
         // CSV file 
-        String CSV_File = "./MOCK_DATA.csv";
+        String CSV_File = "./contact_list.csv";
         BufferedReader BR = null;
         String row = "";
         String splitter = ",";
@@ -84,6 +85,30 @@ public class E15142Lab05{
         } // Insertion to the Data Structures is successful!
         
         System.out.println("Insertion done!");
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter search key: ");
+        String[] params = new String[2];
+        String searchParams = "";
+        String searchKey = "";
+        try {
+            params =  keyboard.nextLine().split(":");
+            searchParams = params[0];
+            searchKey = params[1];
+        } catch (Exception e) {
+            System.out.println("Usage - <param>:<key>\nParams--\nf/F : First name search\nl/L : Last name search\nKey-- Any String");
+            keyboard.close();
+            return;
+        }
+        System.out.println(params[0]);
+        // System.out.println(keyParams);
+        if ( searchParams.equalsIgnoreCase("f") ) {
+            System.out.println("FirstName Search");
+        } else if ( searchParams.equalsIgnoreCase("l") ) {
+            System.out.println("LastName Search");
+        } else {
+            System.out.println("Usage - <param>:<key>\nParams--\nf/F : First name search\nl/L : Last name search\nKey-- Any String");
+        }
         testLists();
+        keyboard.close();
     }
 }
