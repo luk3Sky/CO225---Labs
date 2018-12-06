@@ -32,31 +32,36 @@ public class Matrix extends Thread{
 				c[i][j] = getMultipliedValue(a, b, i, j);
 			}
 		}
-		System.out.println("ID : "+this.getId());
 	}
 
-    public static int [][] multiply(int [][] a, int [][] b) {
-		int no_Of_Threads = a[0].length;
-		Thread[] t = new Thread[no_Of_Threads];
-		System.out.println(no_Of_Threads);
+    public static int [][] multiply(int [][] array_1, int [][] array_2) {
+		a = array_1;
+		b = array_2;
+		x = a.length;
+		y = b[0].length;
+		z1 = a[0].length; 
+		z2 = b.length; 
+		int no_Of_Threads = x;
+		Thread[] threads = new Thread[no_Of_Threads];
 		try {
 			for (int i = 0; i < no_Of_Threads ; i++) {
-				System.out.println(i);
-				t[i] = new Matrix();
-				t[i].start();
+				threads[i] = new Matrix();
+				threads[i].start();
 			}
 		} catch (NullPointerException e) {
 			e.printStackTrace();
+			System.out.println("Thread Creation Error!");
 			return null;
 		}
 		
 		try {
-			for (Thread var : t) {
+			for (Thread var : threads) {
 				var.join();
 			}
 		} catch (InterruptedException e) {
 			System.out.println("Joining Error!");
 			e.printStackTrace();
+			return null;
 		}
 		return c; 
     }
