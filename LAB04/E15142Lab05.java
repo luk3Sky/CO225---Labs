@@ -9,10 +9,6 @@ import java.util.*;
 import java.lang.Character;
 import java.io.*;
 
-/*
-* 
-*/
-
 // Contact object
 class Contact{
 
@@ -47,40 +43,37 @@ class Contact{
 
 public class E15142Lab05{
 
-    public static Map<String, Integer> firstNameMap = new HashMap<>();
-    public static Map<String, Integer> lastNameMap = new HashMap<>();
     public static Map<Integer, Contact> contactListMap = new HashMap<>();
 
     // Method to create the lists
     public static void createLists(int ID, String fName, String lName, String email, String mobileNo){
-        firstNameMap.put(fName, ID);
-        lastNameMap.put(lName, ID);
         contactListMap.put(ID, new Contact(fName, lName, email, mobileNo) );
     }
 
+    // Method to process the search
     public static void getResults(String keyString, int type){
         int count = 0;
-        int tempKey = -1;
         if (type == 1) {
-            for (String var : firstNameMap.keySet()) {
-                if (var.equals(keyString)) {
+            for (Map.Entry<Integer, Contact> var : contactListMap.entrySet()) {
+                String keyName = var.getValue().getFirstName();
+                if (keyName.equals(keyString)) {
                     count++;
-                    tempKey = firstNameMap.get(var);
-                    System.out.println(contactListMap.get(tempKey).getFirstName() + " "+ contactListMap.get(tempKey).getLastName());
-                    System.out.println(contactListMap.get(tempKey).getMobileNo());
-                    System.out.println(contactListMap.get(tempKey).getEmail());
+                    System.out.print("Record : " + count + " ");
+                    System.out.println(var.getValue().getFirstName() + " "+ var.getValue().getLastName());
+                    System.out.println(var.getValue().getMobileNo());
+                    System.out.println(var.getValue().getEmail());
                     continue;
                 }
-                
             }
         } else {
-            for (String var : lastNameMap.keySet()) {
-                if (var.equals(keyString)) {
+            for (Map.Entry<Integer, Contact> var : contactListMap.entrySet()) {
+                String keyName = var.getValue().getLastName();
+                if (keyName.equals(keyString)) {
                     count++;
-                    tempKey = lastNameMap.get(var);
-                    System.out.println(contactListMap.get(tempKey).getFirstName() + " "+ contactListMap.get(tempKey).getLastName());
-                    System.out.println(contactListMap.get(tempKey).getMobileNo());
-                    System.out.println(contactListMap.get(tempKey).getEmail());
+                    System.out.print("Record : " + count + " ");
+                    System.out.println(var.getValue().getFirstName() + " "+ var.getValue().getLastName());
+                    System.out.println(var.getValue().getMobileNo());
+                    System.out.println(var.getValue().getEmail());
                     continue;
                 }
             }
