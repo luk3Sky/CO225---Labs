@@ -2,18 +2,12 @@ import java.lang.Exception.*;
 
 public class Matrix extends Thread{
 
-    private static int [][] a; 
-    private static int [][] b; 
-    private static int [][] c; 
-	private static int x, y, z1, z2;
+    public static int [][] a; 
+    public static int [][] b; 
+    public static int [][] c; 
+	public static int x, y, z1, z2;
 
-	public Matrix(int [][] new_a, int [][] new_b) {
-		a = new_a;
-		b = new_b;
-		x = a.length; 
-		y = b[0].length;
-		z1 = a[0].length; 
-		z2 = b.length; 
+	public Matrix() {
     }
 
 	// A function for get one of the elements of the result matrix (c)
@@ -38,6 +32,7 @@ public class Matrix extends Thread{
 				c[i][j] = getMultipliedValue(a, b, i, j);
 			}
 		}
+		System.out.println("ID : "+this.getId());
 	}
 
     public static int [][] multiply(int [][] a, int [][] b) {
@@ -47,21 +42,21 @@ public class Matrix extends Thread{
 		try {
 			for (int i = 0; i < no_Of_Threads ; i++) {
 				System.out.println(i);
-				t[i] = new Matrix(a, b);
-				// t[i].run();
+				t[i] = new Matrix();
 				t[i].start();
 			}
 		} catch (NullPointerException e) {
+			e.printStackTrace();
 			return null;
 		}
 		
 		try {
 			for (Thread var : t) {
 				var.join();
-				System.out.println("ID : "+var.getId());
 			}
 		} catch (InterruptedException e) {
 			System.out.println("Joining Error!");
+			e.printStackTrace();
 		}
 		return c; 
     }

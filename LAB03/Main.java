@@ -232,7 +232,7 @@ class Main {
 		final float startTime = System.nanoTime();
 		try {
 			int [][] x = Matrix.multiply(a, a); 
-			print_matrix(x);
+			// print_matrix(x);
 		} catch (NullPointerException e) {
 			return;
 		}
