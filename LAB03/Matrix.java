@@ -7,6 +7,9 @@ public class Matrix extends Thread{
     public static int [][] c; 
 	public static int x, y, z1, z2;
 
+	// 1. Create Threads for each row in the first matrix in the multiplication process  
+	// Start the threads and assign each multi - processor to parallelize the process.
+
 	public Matrix() {
     }
 
@@ -19,7 +22,7 @@ public class Matrix extends Thread{
 		return result;
 	}
 
-
+	// 2. Override the run() method which is executed by thread processing  
 	public void run(){
 		if(z1 != z2) { 
 			System.out.println("Cannnot multiply");
@@ -42,13 +45,19 @@ public class Matrix extends Thread{
 		z1 = a[0].length; 
 		z2 = b.length; 
 		int no_Of_Threads = x;
+		// Create a thread array
 		Thread[] threads = new Thread[no_Of_Threads];
+
 		try {
 			for (int i = 0; i < no_Of_Threads ; i++) {
+				// Create thread Matrix for each row
 				threads[i] = new Matrix();
+
+				// 3. Start the thread processing
 				threads[i].start();
 			}
 		} catch (NullPointerException e) {
+			// NullPointerException handling
 			e.printStackTrace();
 			System.out.println("Thread Creation Error!");
 			return null;
@@ -56,6 +65,7 @@ public class Matrix extends Thread{
 		
 		try {
 			for (Thread var : threads) {
+				// 4. Synchronize each threads in order to get final results
 				var.join();
 			}
 		} catch (InterruptedException e) {

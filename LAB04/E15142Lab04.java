@@ -41,7 +41,7 @@ class Contact{
 
 }
 
-public class E15142Lab05{
+public class E15142Lab04{
 
     public static Map<Integer, Contact> contactListMap = new HashMap<>();
 
