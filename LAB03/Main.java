@@ -13,14 +13,11 @@ class Main {
 	}
 
     public static void main(String [] args) { 
-		final float startTime = System.nanoTime();
 		try {
 			int [][] x = Matrix.multiply(a, a); 
 			print_matrix(x);
 		} catch (NullPointerException e) {
 			return;
 		}
-		final float duration = System.nanoTime() - startTime;
-		System.out.println("Elapsed time : " + duration/1000000);
 	}
 }
