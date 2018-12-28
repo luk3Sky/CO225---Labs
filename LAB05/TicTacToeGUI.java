@@ -1,11 +1,3 @@
-/*
-* CO225 - Software Construction Lab Assignments
-* LAB05
-* Tic Tac Toe Game [GUI]
-* ==@luke== 
-* E/15/142  
-*/
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
