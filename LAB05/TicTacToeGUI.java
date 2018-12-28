@@ -38,7 +38,9 @@ public class TicTacToeGUI extends JPanel {
         setLayout(new GridLayout(0, 3));
         createButtons(frame);
         populateEmptyArray();
+        add(new JLabel(), BorderLayout.CENTER);
         add(label, BorderLayout.CENTER);
+        add(new JLabel(), BorderLayout.CENTER);
     }
 
     // Main method
