@@ -11,7 +11,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TicTacToeGUI extends JPanel {
+public class E15142Lab05 extends JPanel {
 
     // constant values
     static final int INIT_STATE = -1;
@@ -30,8 +30,8 @@ public class TicTacToeGUI extends JPanel {
     JButton[] buttons = new JButton[9]; // Button array
     private JPanel panel1;              // Panel
 
-    // Constructor for TicTacToeGUI
-    public TicTacToeGUI(JFrame frame) {
+    // Constructor for E15142Lab05
+    public E15142Lab05(JFrame frame) {
         if (player_tracker % 2 == 0) {
             // for player one
             playerString[0] = "1";
@@ -57,7 +57,7 @@ public class TicTacToeGUI extends JPanel {
         label = new JLabel();
         label.setText("Good Luck!");
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jframe.getContentPane().add(new TicTacToeGUI(jframe));
+        jframe.getContentPane().add(new E15142Lab05(jframe));
         jframe.setBounds(300, 200, 300, 300);
         jframe.setVisible(true);
     }
@@ -175,7 +175,7 @@ public class TicTacToeGUI extends JPanel {
         winnerState = INIT_STATE;
         JFrame jframe = new JFrame("Tic Tac Toe");
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jframe.getContentPane().add(new TicTacToeGUI(jframe));
+        jframe.getContentPane().add(new E15142Lab05(jframe));
         jframe.setBounds(300, 200, 300, 300);
         jframe.setVisible(true);
         label.setText("Good Luck!");
